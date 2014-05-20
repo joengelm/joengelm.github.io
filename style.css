@@ -57,7 +57,7 @@ html, body {
     margin-top:-250px;
     margin-left:-250px;
     
-    border-width: 2px;
+    border-width: 1px;
     border-style: dashed;
     border-color: white;
     border-radius: 50%;
@@ -83,8 +83,8 @@ html, body {
     height: 125px;
     width: 125px;
 
-    margin-left: 10px;
-    margin-bottom: -20px;
+    margin-left: -50px;
+    margin-bottom: -50px;
     
     border-width: 1px;
     border-style: dashed;
