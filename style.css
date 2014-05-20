@@ -58,7 +58,7 @@ html, body {
     margin-left:-250px;
     
     border-width: 2px;
-    border-style: none;
+    border-style: dashed;
     border-color: white;
     border-radius: 50%;
     -webkit-animation: spin-right 20s linear infinite;
@@ -91,7 +91,7 @@ html, body {
     margin-bottom: -50px;
     
     border-width: 1px;
-    border-style: none;
+    border-style: dashed;
     border-color: white;
     border-radius: 50%;
     
