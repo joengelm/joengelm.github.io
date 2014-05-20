@@ -59,11 +59,11 @@ a {
     border-radius: 50%;
     
     box-shadow: 0 0 2px aqua;
-    -webkit-animation: spin-right 4s linear infinite;
-       -moz-animation: spin-right 4s linear infinite;
-        -ms-animation: spin-right 4s linear infinite;
-         -o-animation: spin-right 4s linear infinite;
-            animation: spin-right 4s linear infinite;
+    -webkit-animation: spin-right 3s linear infinite;
+       -moz-animation: spin-right 3s linear infinite;
+        -ms-animation: spin-right 3s linear infinite;
+         -o-animation: spin-right 3s linear infinite;
+            animation: spin-right 3s linear infinite;
 }
 
 #earth-orbit {
@@ -115,11 +115,11 @@ a {
     border-color: white;
     border-radius: 50%;
     
-    -webkit-animation: spin-right 3s linear infinite;
-       -moz-animation: spin-right 3s linear infinite;
-        -ms-animation: spin-right 3s linear infinite;
-         -o-animation: spin-right 3s linear infinite;
-            animation: spin-right 3s linear infinite;
+    -webkit-animation: spin-right 5s linear infinite;
+       -moz-animation: spin-right 5s linear infinite;
+        -ms-animation: spin-right 5s linear infinite;
+         -o-animation: spin-right 5s linear infinite;
+            animation: spin-right 5s linear infinite;
 }
 
 @-webkit-keyframes spin-right {
