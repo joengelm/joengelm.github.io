@@ -36,7 +36,7 @@ a {
     border-style: groove;
     border-radius: 50%;
     
-    box-shadow: 0 0 128px orangered;
+    box-shadow: 0 0 128px red;
     -webkit-animation: pulse 8s infinite ease-in-out;
            -animation: pulse 8s infinite ease-in-out;
 }
