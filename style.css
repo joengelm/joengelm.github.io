@@ -88,11 +88,11 @@ html, body {
     border-color: white;
     border-radius: 50%;
     
-    -webkit-animation: spin-right 10s linear infinite;
-       -moz-animation: spin-right 10s linear infinite;
-        -ms-animation: spin-right 10s linear infinite;
-         -o-animation: spin-right 10s linear infinite;
-            animation: spin-right 10s linear infinite;
+    -webkit-animation: spin-right 20s linear infinite;
+       -moz-animation: spin-right 20s linear infinite;
+        -ms-animation: spin-right 20s linear infinite;
+         -o-animation: spin-right 20s linear infinite;
+            animation: spin-right 20s linear infinite;
 }
 
 @-webkit-keyframes spin-right {
