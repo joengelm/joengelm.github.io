@@ -26,8 +26,8 @@ html, body {
     border-radius: 50%;
     
     box-shadow: 0 0 128px goldenrod;
-    -webkit-animation: pulse 4s infinite ease-in-out;
-           -animation: pulse 4s infinite ease-in-out;
+    -webkit-animation: pulse 8s infinite ease-in-out;
+           -animation: pulse 8s infinite ease-in-out;
 }
 
 #earth {
@@ -89,13 +89,13 @@ html, body {
 }
 
 @-webkit-keyframes pulse {
-    0% { -webkit-box-shadow: 0 0 32px rgba(255,239,0,0.2); }
-    50% { -webkit-box-shadow: 0 0 64px rgba(255,239,0,0.9); }
-    100% { -webkit-box-shadow: 0 0 32px rgba(255,239,0,0.2); }
+    0% { -webkit-box-shadow: 0 0 64px rgba(255,239,0,0.5); }
+    50% { -webkit-box-shadow: 0 0 72px rgba(255,239,0,0.9); }
+    100% { -webkit-box-shadow: 0 0 64px rgba(255,239,0,0.5); }
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 32px rgba(255,239,0,0.2); }
-    50% { box-shadow: 0 0 64px rgba(255,239,0,0.9); }
-    100% { box-shadow: 0 0 32px rgba(255,239,0,0.2); }
+    0% { box-shadow: 0 0 64px rgba(255,239,0,0.5); }
+    50% { box-shadow: 0 0 72px rgba(255,239,0,0.9); }
+    100% { box-shadow: 0 0 64px rgba(255,239,0,0.5); }
 }
