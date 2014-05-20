@@ -116,6 +116,11 @@ a {
     height: 2px;
     width: 2px;
 
+    border-width: 1px;
+    border-style: none;
+    border-color: white;
+    border-radius: 50%;
+
     box-shadow: 0 0 8px white;
     -webkit-animation: pulse 3s infinite ease-in-out;
            -animation: pulse 3s infinite ease-in-out;
@@ -127,6 +132,11 @@ a {
 
     height: 2px;
     width: 2px;
+
+    border-width: 1px;
+    border-style: none;
+    border-color: white;
+    border-radius: 50%;
 
     box-shadow: 0 0 8px white;
     -webkit-animation: pulse 3s infinite ease-in-out;
