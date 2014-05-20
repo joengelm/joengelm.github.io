@@ -13,6 +13,11 @@ h1 {
     color: white;
 }
 
+a {
+    text-decoration: none;
+    color: gray;
+}
+
 #sun {
     position: absolute;
     /* Positions the top-left corner of the image to be *
