@@ -109,7 +109,10 @@ a {
             animation: spin-right 3s linear infinite;
 }
 
-#stars {
+#star1 {
+    top: 10%;
+    left: 10%;
+
     height: 2px;
     width: 2px;
 
@@ -118,14 +121,16 @@ a {
            -animation: pulse 3s infinite ease-in-out;
 }
 
-#star1 {
-    top: 10%;
-    left: 10%;
-}
-
 #star2 {
     top: 90%;
     left: 90%;
+
+    height: 2px;
+    width: 2px;
+
+    box-shadow: 0 0 8px white;
+    -webkit-animation: pulse 3s infinite ease-in-out;
+           -animation: pulse 3s infinite ease-in-out;
 }
 
 @-webkit-keyframes spin-right {
