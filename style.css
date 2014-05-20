@@ -20,9 +20,9 @@ html, body {
     margin-top: -100px; 
     margin-left: -100px;
     
-    border-color: gold;
+    border-color: orange;
     border-width: 1px;
-    border-style: solid;
+    border-style: groove;
     border-radius: 50%;
     
     box-shadow: 0 0 128px goldenrod;
@@ -59,11 +59,11 @@ html, body {
     border-style: none;
     border-color: white;
     border-radius: 50%;
-    -webkit-animation: spin-right 100s linear infinite;
-       -moz-animation: spin-right 100s linear infinite;
-        -ms-animation: spin-right 100s linear infinite;
-         -o-animation: spin-right 100s linear infinite;
-            animation: spin-right 100s linear infinite;
+    -webkit-animation: spin-right 20s linear infinite;
+       -moz-animation: spin-right 20s linear infinite;
+        -ms-animation: spin-right 20s linear infinite;
+         -o-animation: spin-right 20s linear infinite;
+            animation: spin-right 20s linear infinite;
 }
 
 @-webkit-keyframes spin-right {
