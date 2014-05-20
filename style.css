@@ -84,7 +84,7 @@ html, body {
     width: 125px;
 
     margin-left: 10px;
-    margin-bottom: 0px;
+    margin-bottom: -20px;
     
     border-width: 1px;
     border-style: dashed;
