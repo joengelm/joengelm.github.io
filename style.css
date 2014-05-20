@@ -72,8 +72,8 @@ html, body {
     height: 5px;
     width: 5px;
 
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: -2.5px;
+    margin-top: -2.5px;
 }
 
 #moon-orbit {
@@ -83,8 +83,8 @@ html, body {
     height: 50px;
     width: 50px;
 
-    margin-left: 0px;
-    margin-bottom: 0px;
+    margin-left: -25px;
+    margin-bottom: -25px;
     
     border-width: 1px;
     border-style: dashed;
