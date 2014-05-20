@@ -36,7 +36,7 @@ a {
     border-style: groove;
     border-radius: 50%;
     
-    box-shadow: 0 0 128px goldenrod;
+    box-shadow: 0 0 128px orangered;
     -webkit-animation: pulse 8s infinite ease-in-out;
            -animation: pulse 8s infinite ease-in-out;
 }
@@ -88,7 +88,7 @@ a {
 
     border-radius: 50%;
     
-    box-shadow: 0 0 10px blue;
+    box-shadow: 0 0 3px white;
 }
 
 #moon-orbit {
