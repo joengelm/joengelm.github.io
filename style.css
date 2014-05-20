@@ -58,7 +58,7 @@ html, body {
     margin-left:-200px;
     
     border-width: 1px;
-    border-style: dashed;
+    border-style: none;
     border-color: white;
     border-radius: 50%;
     -webkit-animation: spin-right 20s linear infinite;
@@ -87,15 +87,15 @@ html, body {
     margin-top: 25px;
     
     border-width: 1px;
-    border-style: dashed;
+    border-style: none;
     border-color: white;
     border-radius: 50%;
     
-    -webkit-animation: spin-right 5s linear infinite;
-       -moz-animation: spin-right 5s linear infinite;
-        -ms-animation: spin-right 5s linear infinite;
-         -o-animation: spin-right 5s linear infinite;
-            animation: spin-right 5s linear infinite;
+    -webkit-animation: spin-right 3s linear infinite;
+       -moz-animation: spin-right 3s linear infinite;
+        -ms-animation: spin-right 3s linear infinite;
+         -o-animation: spin-right 3s linear infinite;
+            animation: spin-right 3s linear infinite;
 }
 
 @-webkit-keyframes spin-right {
