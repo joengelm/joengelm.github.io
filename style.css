@@ -83,8 +83,8 @@ html, body {
     height: 125px;
     width: 125px;
 
-    margin-left: -50px;
-    margin-bottom: -50px;
+    margin-left: 50px;
+    margin-bottom: 50px;
     
     border-width: 1px;
     border-style: dashed;
