@@ -21,7 +21,7 @@ html, body {
     margin-left: -100px;
     
     border-color: gold;
-    border-width: 3px;
+    border-width: 1px;
     border-style: solid;
     border-radius: 50%;
     
@@ -59,11 +59,11 @@ html, body {
     border-style: none;
     border-color: white;
     border-radius: 50%;
-    -webkit-animation: spin-right 10s linear infinite;
-       -moz-animation: spin-right 10s linear infinite;
-        -ms-animation: spin-right 10s linear infinite;
-         -o-animation: spin-right 10s linear infinite;
-            animation: spin-right 10s linear infinite;
+    -webkit-animation: spin-right 100s linear infinite;
+       -moz-animation: spin-right 100s linear infinite;
+        -ms-animation: spin-right 100s linear infinite;
+         -o-animation: spin-right 100s linear infinite;
+            animation: spin-right 100s linear infinite;
 }
 
 @-webkit-keyframes spin-right {
