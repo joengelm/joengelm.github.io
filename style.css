@@ -68,6 +68,33 @@ html, body {
             animation: spin-right 20s linear infinite;
 }
 
+#moon {
+    height: 10px;
+    width: 10px;
+}
+
+#moon-orbit {
+    top: 50%;
+    left: 50%;
+
+    height: 50px;
+    width: 50px;
+
+    margin-left: -12.5px;
+    margin-bottom: -37px;
+    
+    border-width: 1px;
+    border-style: none;
+    border-color: white;
+    border-radius: 50%;
+    
+    -webkit-animation: spin-right 10s linear infinite;
+       -moz-animation: spin-right 10s linear infinite;
+        -ms-animation: spin-right 10s linear infinite;
+         -o-animation: spin-right 10s linear infinite;
+            animation: spin-right 10s linear infinite;
+}
+
 @-webkit-keyframes spin-right {
   100% {
     -webkit-transform: rotate(360deg);
