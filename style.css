@@ -110,8 +110,8 @@ a {
 }
 
 #star1 {
-    top: 10%;
-    left: 10%;
+    top: 100px;
+    left: 75px;
 
     height: 2px;
     width: 2px;
@@ -127,8 +127,8 @@ a {
 }
 
 #star2 {
-    top: 90%;
-    left: 90%;
+    top: 400%;
+    left: 800%;
 
     height: 2px;
     width: 2px;
