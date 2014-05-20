@@ -7,6 +7,12 @@ html, body {
     background-color: black;
 }
 
+h1 {
+    font-family: "Lucida Sans", Monaco, monospace;
+    text-align: center;
+    color: white;
+}
+
 #sun {
     position: absolute;
     /* Positions the top-left corner of the image to be *
