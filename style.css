@@ -80,8 +80,8 @@ html, body {
     height: 100px;
     width: 100px;
 
-    margin-left: -15px;
-    margin-bottom: -25px;
+    margin-left: 0px;
+    margin-bottom: 5px;
     
     border-width: 1px;
     border-style: none;
