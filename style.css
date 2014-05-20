@@ -89,9 +89,9 @@ html, body {
 }
 
 @-webkit-keyframes pulse {
-    0% { -webkit-box-shadow: 0 0 14px rgba(255,255,255,0.2); }
-    50% { -webkit-box-shadow: 0 0 14px rgba(255,255,255,0.9); }
-    100% { -webkit-box-shadow: 0 0 14px rgba(255,255,255,0.2); }
+    0% { -webkit-box-shadow: 0 0 32px rgba(255,255,255,0.2); }
+    50% { -webkit-box-shadow: 0 0 64px rgba(255,255,255,0.9); }
+    100% { -webkit-box-shadow: 0 0 32px rgba(255,255,255,0.2); }
 }
 
 @keyframes pulse {
