@@ -15,8 +15,8 @@ html, body {
     left: 50%;
     
     /* Play with these numbers to see what it does */
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     margin-top: -100px; 
     margin-left: -100px;
     
@@ -36,8 +36,8 @@ html, body {
     top: 10%;
     left: 15%;
     
-    height: 40px;
-    width: 40px;
+    height: 20px;
+    width: 20px;
     margin-left:-25px;
     margin-right:-25px;
     
@@ -69,8 +69,8 @@ html, body {
 }
 
 #moon {
-    height: 20px;
-    width: 20px;
+    height: 5px;
+    width: 5px;
 
     margin-left: 10px;
     margin-top: 10px;
