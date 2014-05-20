@@ -59,6 +59,11 @@ a {
     border-radius: 50%;
     
     box-shadow: 0 0 2px aqua;
+    -webkit-animation: spin-right 4s linear infinite;
+       -moz-animation: spin-right 4s linear infinite;
+        -ms-animation: spin-right 4s linear infinite;
+         -o-animation: spin-right 4s linear infinite;
+            animation: spin-right 4s linear infinite;
 }
 
 #earth-orbit {
