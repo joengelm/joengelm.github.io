@@ -1,71 +1,87 @@
-html {
-    background-color: #000;
+html, body {
+    /* The universe takes up all available space */
+    width: 100%;
+    height: 100%;
+    
+    /* The universe is black */
+    background-color: black;
 }
 
-.sun {
+#sun {
     position: absolute;
-    height: 100px;
-    width: 100px;
-
+    /* Positions the top-left corner of the image to be *
+    /* in the middle of the box */
     top: 50%;
     left: 50%;
-    margin-left: -50px;
-    margin-top: -50px;
     
-    border-radius: 50%;
-    
-    box-shadow: rgb(204, 153, 0) 0px 0px 50px 0px;
-}
-
-.earth {
-    height: 25px;
-    width: 25px;
-    
-    border-radius: 50%;
-    box-shadow: green 0 0 25px;
-}
-
-.earth-orbit {
-    position: absolute;
+    /* Play with these numbers to see what it does */
     height: 200px;
     width: 200px;
-    top: 50%;
-    left: 50%;
-    
+    margin-top: -100px; 
     margin-left: -100px;
-    margin-top: -100px;
     
-    
-    /*border-radius: 50%;*/
-    /*border: 1px dotted gray;*/
-    
-    -webkit-animation: spin-right 10s linear infinite;
-}
-
-.moon {
-    height: 10px;
-    width: 10px;
-}
-
-.moon-orbit {
-    top: 50%;
-    left: 50%;
-
-    height: 50px;
-    width: 50px;
-
-    margin-left: -12.5px;
-    margin-bottom: -37px;
-    
-    border: 1px solid rgba(255, 0, 0, 0.1);
+    border-color: orange;
+    border-width: 4px;
+    border-style: solid;
     border-radius: 50%;
     
-    -webkit-animation: spin-right 1s linear infinite;
+    box-shadow: 0 0 128px orange;
 }
 
+#earth {
+    /* Style your earth */
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    
+    height: 50px;
+    width: 50px;
+    margin-left:-25px;
+    margin-right:-25px;
+    
+    border-radius: 50%;
+    
+    box-shadow: 0 0 8px aqua;
+}
+
+#earth-orbit {
+    /* For Section #2 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    width: 500px;
+    height: 500px;
+    margin-top:-250px;
+    margin-left:-250px;
+    
+    border-width: 2px;
+    border-style: dotted;
+    border-color: white;
+    border-radius: 50%;
+    -webkit-animation: spin-right 10s linear infinite;
+       -moz-animation: spin-right 10s linear infinite;
+        -ms-animation: spin-right 10s linear infinite;
+         -o-animation: spin-right 10s linear infinite;
+            animation: spin-right 10s linear infinite;
+}
 
 @-webkit-keyframes spin-right {
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
+  100% {
+    -webkit-transform: rotate(360deg);
+       -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+       -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
