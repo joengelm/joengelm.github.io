@@ -5,21 +5,36 @@ html, body {
     
     /* The universe is black */
     background-color: black;
+    -webkit-animation: pulse-background 60s infinite alternate;
+}
+
+a {
+    text-decoration: underline;
+    color: darkgray;
 }
 
 h1, h2 {
     font-family: "Lucida Sans", Monaco, monospace;
     text-align: center;
-    color: white;
+}
+
+h1 {
+    color: gray;
 }
 
 h2 {
-    font-size: 12px;
+    font-size: 16px;
+    color: gray;
+    -webkit-animation: pulse-font-color 60s infinite alternate;
 }
 
-a {
-    text-decoration: none;
-    color: gray;
+#footer {   
+    position:fixed;
+   left: 0px;
+   bottom: 0px;
+   height: 40px;
+   width: 100%;
+   background: black;
 }
 
 #sun {
@@ -30,19 +45,18 @@ a {
     left: 50%;
     
     /* Play with these numbers to see what it does */
-    height: 100px;
-    width: 100px;
-    margin-top: -50px; 
-    margin-left: -50px;
-    
-    border-color: orange;
-    border-width: 2px;
-    border-style: groove;
+    height: 200px;
+    width: 200px;
+    margin-top: -100px; 
+    margin-left: -100px;
+
     border-radius: 50%;
-    
-    box-shadow: 0 0 128px red;
-    -webkit-animation: pulse 8s infinite ease-in-out;
-           -animation: pulse 8s infinite ease-in-out;
+
+    -webkit-animation: spin-right 6s linear infinite;
+       -moz-animation: spin-right 6s linear infinite;
+        -ms-animation: spin-right 6s linear infinite;
+         -o-animation: spin-right 6s linear infinite;
+            animation: spin-right 6s linear infinite;
 }
 
 #earth {
@@ -51,19 +65,18 @@ a {
     top: 10%;
     left: 15%;
     
-    height: 20px;
-    width: 20px;
-    margin-left:-10px;
-    margin-right:-10px;
+    height: 100px;
+    width: 100px;
+    margin-left:-50px;
+    margin-right:-50px;
     
     border-radius: 50%;
     
-    box-shadow: 0 0 2px aqua;
-    -webkit-animation: spin-right 3s linear infinite;
-       -moz-animation: spin-right 3s linear infinite;
-        -ms-animation: spin-right 3s linear infinite;
-         -o-animation: spin-right 3s linear infinite;
-            animation: spin-right 3s linear infinite;
+    -webkit-animation: spin-left 3s linear infinite;
+       -moz-animation: spin-left 3s linear infinite;
+        -ms-animation: spin-left 3s linear infinite;
+         -o-animation: spin-left 3s linear infinite;
+            animation: spin-left 3s linear infinite;
 }
 
 #earth-orbit {
@@ -72,10 +85,10 @@ a {
     top: 50%;
     left: 50%;
     
-    width: 400px;
-    height: 400px;
-    margin-top:-200px;
-    margin-left:-200px;
+    width: 500px;
+    height: 500px;
+    margin-top:-250px;
+    margin-left:-250px;
     
     border-width: 1px;
     border-style: none;
@@ -89,37 +102,41 @@ a {
 }
 
 #moon {
-    height: 5px;
-    width: 5px;
+    height: 20px;
+    width: 20px;
 
-    margin-left: -2.5px;
-    margin-top: -2.5px;
+    margin-left: -10px;
+    margin-top: -10px;
 
     border-radius: 50%;
-    
-    box-shadow: 0 0 3px white;
+
+    -webkit-animation: spin-left 2s linear infinite;
+       -moz-animation: spin-left 2s linear infinite;
+        -ms-animation: spin-left 2s linear infinite;
+         -o-animation: spin-left 2s linear infinite;
+            animation: spin-left 2s linear infinite;
 }
 
 #moon-orbit {
     top: 50%;
     left: 50%;
 
-    height: 50px;
-    width: 50px;
+    height: 150px;
+    width: 150px;
 
-    margin-left: 35px;
-    margin-top: 25px;
+    margin-left: 0px;
+    margin-top: 20px;
     
     border-width: 1px;
     border-style: none;
     border-color: white;
     border-radius: 50%;
     
-    -webkit-animation: spin-right 5s linear infinite;
-       -moz-animation: spin-right 5s linear infinite;
-        -ms-animation: spin-right 5s linear infinite;
-         -o-animation: spin-right 5s linear infinite;
-            animation: spin-right 5s linear infinite;
+    -webkit-animation: spin-right 20s linear infinite;
+       -moz-animation: spin-right 20s linear infinite;
+        -ms-animation: spin-right 20s linear infinite;
+         -o-animation: spin-right 20s linear infinite;
+            animation: spin-right 20s linear infinite;
 }
 
 @-webkit-keyframes spin-right {
@@ -142,14 +159,38 @@ a {
   }
 }
 
-@-webkit-keyframes pulse {
-    0% { -webkit-box-shadow: 0 0 64px rgba(255,40,0,0.5); }
-    50% { -webkit-box-shadow: 0 0 72px rgba(255,40,0,0.9); }
-    100% { -webkit-box-shadow: 0 0 64px rgba(255,40,0,0.5); }
+@-webkit-keyframes spin-left {
+  100% {
+    -webkit-transform: rotate(-360deg);
+       -moz-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+         -o-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
 }
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 64px rgba(255,40,0,0.5); }
-    50% { box-shadow: 0 0 72px rgba(255,40,0,0.9); }
-    100% { box-shadow: 0 0 64px rgba(255,40,0,0.5); }
+@keyframes spin-left {
+  100% {
+    -webkit-transform: rotate(-360deg);
+       -moz-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+         -o-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes pulse-background { 
+    0% {background-color: #45CEEF;} 
+    25% {background-color: #FFF5A5;} 
+    50% {background-color: #FFD4DA;} 
+    75% {background-color: #99D2E4;} 
+    100% {background-color: #D8CAB4;} 
+}
+
+@-webkit-keyframes pulse-font-color { 
+    0% {color: #45CEEF;} 
+    25% {color: #FFF5A5;} 
+    50% {color: #FFD4DA;} 
+    75% {color: #99D2E4;} 
+    100% {color: #D8CAB4;} 
 }
