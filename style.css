@@ -10,7 +10,7 @@ html, body {
 
 a {
     text-decoration: underline;
-    color: darkgray;
+    color: gray;
 }
 
 h1, h2 {
@@ -19,7 +19,7 @@ h1, h2 {
 }
 
 h1 {
-    color: gray;
+    color: black;
 }
 
 h2 {
@@ -137,6 +137,15 @@ h2 {
         -ms-animation: spin-right 20s linear infinite;
          -o-animation: spin-right 20s linear infinite;
             animation: spin-right 20s linear infinite;
+}
+
+#bio {
+    width: 80%;
+    margin: auto auto auto auto;
+    font-family: "Lucida Sans", Monaco, monospace;
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
 }
 
 @-webkit-keyframes spin-right {
