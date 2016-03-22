@@ -1,21 +1,19 @@
 html, body {
-    /* The universe takes up (almost) all available space */
+    /* The universe */
     width: 99%;
     height: 99%;
     
-    /* The universe is black */
     background-color: black;
     -webkit-animation: pulse-background 60s infinite alternate;
 }
 
 a {
     text-decoration: underline;
-    color: gray;
+    color: black;
 }
 
 h1, h2 {
-    font-family: "Lucida Sans", Monaco, monospace;
-    text-align: center;
+    font-family: "Courier New", Monaco, monospace;
 }
 
 h1 {
@@ -23,6 +21,7 @@ h1 {
 }
 
 h2 {
+	text-align: center;
     font-size: 16px;
     color: gray;
     -webkit-animation: pulse-font-color 60s infinite alternate;
@@ -37,9 +36,18 @@ h2 {
    background: black;
 }
 
+.footer-link {
+	font-size: 16px;
+    color: gray;
+    text-decoration: none;
+    margin-right: 14px;
+    margin-left: 14px;
+    -webkit-animation: pulse-font-color 60s infinite alternate;
+}
+
 #cat1 {
     position: absolute;
-    /* Positions the top-left corner of the image to be *
+    /* Positions the top-left corner of the image to be */
     /* in the middle of the box */
     top: 50%;
     left: 50%;
@@ -140,11 +148,10 @@ h2 {
 }
 
 #bio {
-    width: 80%;
+    width: 60%;
     margin: auto auto auto auto;
-    font-family: "Lucida Sans", Monaco, monospace;
-    font-weight: bold;
-    font-size: 30px;
+    font-family: "Courier New", Monaco, monospace;
+    font-size: 18px;
     color: black;
 }
 
