@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<style type="text/css">
+/* <![CDATA[ */
+body {
+ background: #fff;
+ color: #000;
+ margin: 0 0 0 24pt;
+ font-family: Optima, sans-serif;
+ font-size: 13pt;
+}
+a {
+ color: #117;
+ text-decoration: none;
+}
+/* ]]> */
+</style>
+<script type="text/javascript">
+var t = 0;
+var film = ["The Lion King", "Aladdin", "The Little Mermaid", "Frozen", "Tangled", "Snow White and the Seven Dwarves", "Cinderella", "Pocahontas", "Beauty and the Beast", "The Jungle Book", "Sleeping Beauty", "Peter Pan", "Mulan", "Pinocchio", "Fantasia", "Dumbo", "Bambi", "Lady and the Tramp", "Hercules", "The Hunchback of Notre Dame", "Tarzan"];
+var verb = ["is actually about", "is really just a story of", "is clearly just a tale of", "couldn't be about anything other than", "might actually be about"];
+var adj = ["a nervous", "a freakin' wild", "a crooked", "a horny", "a sensual", "an incompetent", "an inadequate", "a totally jacked", "an angsty ", "a privileged", "a sexually frustrated"];
+var obj = ["man", "woman", "teenager", "animal", "dreamer", "politician", "war hero", "sex addict", "freemason", "mammal", "jerk", "dude", "princess", "god", "rapper", "sad boy", "millenial"];
+var who_that = ["who loves", "who can't prevent", "obsessed with", "struggling with", "overcoming", "in search of", "in dire need of", "championing", "murdering", "letting go of"];
+var act = ["sex", "spaghetti", "the American Dream", "the future of electronic dance music", "existence", "the bourgeoisie", "a communist revolution", "democracy", "the patriarchy", "genitalia", "vaporwave aesthetics", "a nice person", "their own reflection"];
+function rand_range(max) {
+    "use strict";
+    return Math.floor(Math.random() * (max + 1));
+}
+function fresh(array) {
+    "use strict";
+    var index = rand_range(array.length - 2) + 1, selection = array[index];
+    array[index] = array[0];
+    array[0] = selection;
+    return selection;
+}
+function story() {
+    "use strict";
+    var last, lede, main = document.getElementById('main');
+    if (t <= 12) {
+        t += 1;
+    } else {
+        main.removeChild(document.getElementById('main').firstChild);
+    }
+    last = document.createElement('div');
+    last.appendChild(document.createElement('br'));
+    lede = fresh(film) + " " + fresh(verb) + " " + fresh(adj) + " " + fresh(obj) + " " + fresh(who_that) + " " + fresh(act) + ".";
+    last.appendChild(document.createTextNode(lede));
+    main.appendChild(last);
+}
+function produce_stories() {
+    "use strict";
+    story();
+    setInterval(story, 5000);
+}</script>
+  <title>The TRUTH about Disney</title>
+</head>
+<body onload="produce_stories();">
+<div style="float:right; background:#999; margin-left:6px; border-left:thin #000 solid; border-bottom:thin #000 solid; padding:6px">
+<div>Based on a THE TRUTH about DISNEY'S CORRUPTIVE films!<br /><a href="http://joengelm.github.com">Joe Engelman</a></div>
+</div>
+<div id="main"></div>
+</body>
+</html>
+
+

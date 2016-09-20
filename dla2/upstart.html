@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0035)http://nickm.com/poems/upstart.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Upstart</title>
+  
+  <meta name="keywords" content="poem, generator">
+  <meta name="date" content="2013-10-09">
+  <style type="text/css">a:link {text-decoration:none;}</style>
+</head>
+<body style="font-family: Helvetica, &#39;Nimbus Sans L&#39;, &#39;Liberation Sans&#39;, Arial, sans-serif; background:white; color:black; padding:14px 28px 0 28px" data-pinterest-extension-installed="cr1.39.2">
+<div style="text-align:center; font-size:15px; padding: 14px 0 28px 0;"><b style="font-size:20px">Telechildren,</b> the morphological television of the 90s, for kids today. By <a href="http://nickm.com/">Joe Engelman.</a></div>
+<div style="width:628px; font-size:16px; margin-left:auto; margin-right:auto">
+<div id="dotcom1" style="text-align: center; height: 250px; width: 300px; line-height: 250px; color: white; float: left; font-family: Verdana, Geneva, sans-serif; background: red;">Spongetubbies</div>
+<div id="dotcom3" style="text-align: center; height: 250px; width: 300px; line-height: 250px; color: white; float: right; font-family: Trebuchet, &quot;Trebuchet MS&quot;, sans-serif; background: green;">Mr. Roger's the Explorer</div>
+<div style="height:28px; clear:both"></div>
+<div id="dotcom4" style="text-align: center; height: 250px; width: 300px; line-height: 250px; color: white; float: left; margin-bottom: 28px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, sans-serif; background: blue;">The Powerpuff Thornberries</div>
+<div id="dotcom2" style="text-align: center; height: 250px; width: 300px; line-height: 250px; color: white; float: right; margin-bottom: 28px; font-family: Verdana, Geneva, sans-serif; background: orange;">The Angry Neighborhood</div>
+</div>
+<script type="text/javascript">
+var panel = 1, names = [
+    ['Sponge', 'bob'],
+    ['Blues', ' Clues'],
+    ['Courage', ' the Cowardly Dog'],
+    ['Tele', 'tubbies'],
+    ['Sesame', ' Street'],
+    ['Mr. Roger\'s', ' Neighborhood'],
+    ['Thomas', ' the Tank Engine'],
+    ['Dora', ' the Explorer'],
+    ['Rug', 'rats'],
+    ['Curious', ' George'],
+    ['Power', ' Rangers'],
+    ['Dexter\'s', ' Laboratory'],
+    ['The Flint', 'stones'],
+    ['Cow and', ' Chicken'],
+    ['The Fairly', ' Oddparents'],
+    ['Hey', ' Arnold!'],
+    ['The Angry', ' Beavers'],
+    ['The Wild', ' Thornberries'],
+    ['The Powerpuff', ' Girls'],
+    ['Ani', 'morphs']
+    ], fonts = [
+    'Arial, Helvetica, sans-serif',
+    'Arial Black, Gadget, sans-serif',
+    'Impact, Charcoal, sans-serif',
+    'Lucida Console, Monaco, monospace',
+    'Lucida Sans Unicode, Lucida Grande, sans-serif',
+    'Tahoma, Geneva, sans-serif',
+    'Trebuchet, Trebuchet MS, sans-serif',
+    'Verdana, Geneva, sans-serif'
+    ]
+function rand_index(len) {
+    return Math.floor(Math.random() * len);
+}
+function update() {
+    "use strict";
+    var first, second, font, dotcomdiv = document.getElementById('dotcom' + panel);
+    first = rand_index(names.length);
+    second = rand_index(names.length - 1);
+    if (second === first)
+        { second = names.length - 1; }
+    dotcomdiv.innerHTML = names[first][0] + names[second][1];
+    panel = panel + 1;
+    if (panel === 5)
+        { panel = 1; }
+    font = fonts[rand_index(fonts.length)];
+    dotcomdiv.style.fontFamily = font;
+}
+update();
+update();
+update();
+update();
+setInterval(update, 500);
+</script>
+
+
+</body></html>
