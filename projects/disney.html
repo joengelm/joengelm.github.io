@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
+        <style type="text/css">
+            body {
+                background-image: url("disney.gif");
+                background-repeat: repeat;
+                font-family: Optima, sans-serif;
+            }
+            a {
+                color: #117;
+                text-decoration: none;
+            }
+            h1 {
+                font-size: 28pt;
+                margin-bottom: 5pt;
+            }
+            h2 {
+                font-size: 12pt;
+                font-style: italic;
+                margin: 0 0 20pt;
+            }
+            hr {
+                border-color: #000;
+            }
+            .title {
+                font-family: 'Copse', serif;
+                margin: auto;
+                text-align: center;
+                word-spacing: 5pt;
+            }
+            #stories {
+                font-size: 12pt;
+                margin: 0 24pt;
+                text-align: center;
+            }
+        </style>
+        <script type="text/javascript">
+            var t = 0;
+            var film = ["The Lion King", "Aladdin", "The Little Mermaid", "Frozen", "Tangled", "Snow White and the Seven Dwarves", "Cinderella", "Pocahontas", "Beauty and the Beast", "The Jungle Book", "Sleeping Beauty", "Peter Pan", "Mulan", "Pinocchio", "Fantasia", "Dumbo", "Bambi", "Lady and the Tramp", "Hercules", "The Hunchback of Notre Dame", "Tarzan"];
+            var verb = ["is actually about", "is really just a story of", "is clearly just a tale of", "couldn't be about anything other than", "might actually be about"];
+            var adj = ["a nervous", "a wild", "a crooked", "a horny", "a sensual", "an incompetent", "an inadequate", "a totally jacked", "an angsty ", "a privileged", "a sexually frustrated", "a foolish", "an uninspiring", "a lackluster", "an insecure"];
+            var obj = ["man", "woman", "teenager", "animal", "dreamer", "politician", "war hero", "sex addict", "freemason", "mammal", "jerk", "dude", "princess", "god", "goddess", "sad boy", "millenial", "couple"];
+            var who_that = ["who loves", "who can't prevent", "obsessed with", "struggling with", "overcoming", "in search of", "in dire need of", "championing", "murdering", "letting go of"];
+            var act = ["sex", "their innocence", "the American Dream", "the future of electronic dance music", "existence", "the bourgeoisie", "a communist revolution", "democracy", "the patriarchy", "genitalia", "vaporwave", "a nice person", "their own reflection"];
+            function rand_range(max) {
+                return Math.floor(Math.random() * (max + 1));
+            }
+            function fresh(array) {
+                var index = rand_range(array.length - 2) + 1, selection = array[index];
+                array[index] = array[0];
+                array[0] = selection;
+                return selection;
+            }
+            function story() {
+                var last, lede, stories = document.getElementById('stories');
+                if (t <= 12) {
+                    t += 1;
+                } else {
+                    stories.removeChild(document.getElementById('stories').lastChild);
+                }
+                last = document.createElement('div');
+                last.appendChild(document.createElement('br'));
+                lede = fresh(film) + " " + fresh(verb) + " " + fresh(adj) + " " + fresh(obj) + " " + fresh(who_that) + " " + fresh(act) + ".";
+                last.appendChild(document.createTextNode(lede));
+                stories.insertBefore(last, document.getElementById('stories').firstChild);
+            }
+            function produce_stories() {
+                story();
+                setInterval(story, 3500);
+            }
+        </script>
+        <title>The TRUTH about Disney</title>
+    </head>
+    <body onload="produce_stories();">
+        <div class="title">
+            <h1>The TRUTH about Disney Movies</h1>
+            <h2>Here's what those wicked liberals are REALLY trying to teach your kids!</h2>
+        </div>
+        <hr style="color: #000; max-width: 200pt;"/>
+        <div id="stories"></div>
+    </body>
+</html>
+
+
