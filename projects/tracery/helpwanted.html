@@ -1,30 +1,29 @@
 <script src="../lib/tracery.js"></script>
 <script src="../lib/mousetrap.min.js"></script>
 <script src="../lib/jquery-1.11.1.min.js"></script>
-<h1 style="font-size: 28pt;">Title</h1>
-<p style="font-size: 18pt;">Text will go here</p>
+<div></div>
 <button onclick="generate()">Generate</button>
 <script>
 var grammarObj = {
+	"root": ["#[job:#occupation#]post#"],
+	"post": ["<h1>#heading#</h1><p>#blurb#</p>"],
 	"heading": ["#title# (#location#)"],
-	"title": ["help wanted", "Help wanted", "Help me!", "job opening", "No experience? No worries!", "no experience needed", "Looking for an assistant", "new positions open", "WORK WITH ME", "Work for us!", "We need you!", "want to make $$$ fast?!", "earn money without leaving the house!", "NOT a pyramid scheme!", "opportunities await!", "Your FUTURE, starts with US", "be honest, you NEED a job like this", "Jobs available", "New office opening", "new restaurant, need workers"],
+	"title": ["help wanted", "Help wanted", "Help me!", "job opening", "No experience? No worries!", "no experience needed", "Looking for an assistant", "new positions open", "WORK WITH ME", "Work for us!", "We need you!", "want to make $$$ fast?!", "earn money without leaving the house!", "NOT a pyramid scheme!", "opportunities await!", "Your FUTURE, starts with US", "be honest, you NEED a job like this", "Jobs available", "New office opening", "new restaurant, need #job.s#", "looking for a #job#", "#job# needed", "#job.s# needed", "hiring #job.s#!", "seeking #job#"],
 	"location": ["Warwick", "Providence", "Boston, MA", "Cranston", "Newport", "Pawtuckett", "east providence", "warwick", "providence", "downtown", "college hill", "Federal Hill"],
-	"blurb": ["#us# looking for a #occupation# to #task#. #you# should apply #method#. Please, #request# or we #threat#. We #conclude#!"],
+	"blurb": ["#us# looking for #job.a# to #task#. #you# should apply #method#. Please, #request# or we #threat#. We #conclude#!"],
 	"us": ["We are", "I am", "Our company is", "A new team is", "Our team is", "our small, local company is", "my friend's company just started", "Brown Unversity's IT department is", "Baja\'s is", "The Providence city council is", "The Roger Williams Zoo is"],
 	"occupation": ["doctor", "janitor", "secretary", "assistant", "laywer", "dishwasher", "chef", "cook", "attendant", "wizard", "entertainer", "clown", "zookeeper", "salesperson", "salesperson", "volunteer", "artist-in-residence", "handyman", "server", "valet", "system administrator", "janitor", "assistant"],
 	"task": ["maintain our computer network", "clean the premises daily", "administer first aid in times of need", "lead our growing sales team", "convince new customers to buy our #product#", "design the next iteration of our patented #product#", "prepare lunch for our team every day", "represent us in our upcoming court battle", "feed and care for our collection of animals", "help install new software", "keep our enemies quiet", "put the finishing touches on our new #product#", "drive the CEO to and from work every day", "water the plants", "market our new #product#", "f*** s*** up", "help us improve our dismal public relations", "coordinate our social media presence", "write fake reviews for our new #product# on Amazon", "trash our competitors on Yelp", "assist customers"],
 	"product": ["apple juicer", "pie tins", "alcoholic energy drinks", "mobile phone", "hair ties", "lollipops", "DJ software", "smart TV", "gaming console", "toilet paper", "dish soap", "liquid cheese", "mouthwash", "recreational drones", "military gear", "squirrel soup", "cat leashes", "high quality memes", "shitposts", "salty snacks"],
-	"you": ["Applicants", "Interested candidates", "Qualified candidates", "Everyone"],
+	"you": ["Applicants", "Interested candidates", "Qualified candidates", "You"],
 	"method": ["online", "on our new website", "in person", "with a comprehensive portfolio", "with an updated resume", "with their CV", "by emailing a cover letter to us", "by sending us an email with their resume attached", "in person", "in person", "today", "before it's too late", "now", "with a sample of previous work"],
 	"request": ["do not include your name in the application", "do not email us multiple times", "do not call us directly", "include your resume", "attach a brief cover letter", "don\'t be weird", "follow us on all social networks", "prepare a short piece before interviewing", "don\'t be another one of those \"meme kids\""],
 	"threat": ["will not consider your application", "will not consider you for the position", "will throw out your application", "will sue you for every penny you're worth", "will sue you for all of your money", "will ignore your pleas for employment", "will not help you", "will not consider you", "will not hire you", "will fire you before you even start", "will not consider your application"],
-	"conclude": ["look forward to seeing you", "can\'t wait to meet you", "hope to see you soon", "look forward to receiving your application", "don\'t want to hire another failure", "don\'t want to waste any time", "are getting desperate", "are beginning to get desperate", "hope that you\'ll apply"]
+	"conclude": ["look forward to seeing you", "can\'t wait to meet you", "hope to see you soon", "look forward to receiving your application", "don\'t want to hire another failure", "don\'t want to waste any time", "are getting desperate", "are beginning to get desperate", "hope that you\'ll apply", "can\'t wait to hear from you"]
 }
 var grammar = tracery.createGrammar(grammarObj)
 function generate(){
-	var heading = grammar.flatten("#heading#");
-	var blurb = grammar.flatten("#blurb#");
-	$('h1').text(heading);
-	$('p').text(blurb);
+	var heading = grammar.flatten("#root#");
+	$('div').html(heading);
 }
 </script>
