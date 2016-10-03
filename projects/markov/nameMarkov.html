@@ -1,0 +1,14 @@
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/markov.js"></script>
+<script>
+var markov = new MarkovGenerator(2,18," ")
+var text = "Juniper Styles Isaiah Brand JJ Chen Aubrey DeRonde Joe Engelman Andrew Ganem Simon Jones Jack Kelly Harry Kettelberger Will Thompson Neil Wathore Alexis Viera" 
+markov.feed(text)
+function generate(){
+	var t = markov.generate()
+	t = t.split(" ").slice(0,2).join(" ")
+	$('h1').text(t);
+}
+</script>
+<h1>Markov-generated text will go here</h1>
+<button onclick="generate()">Generate</button>

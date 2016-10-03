@@ -1,0 +1,58 @@
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/markov.js"></script>
+<script>
+	var markov = new MarkovGeneratorWord(3,100);
+	var titleMarkov = new MarkovGeneratorWord(2,6);
+	$.get("harrypotter/hp1.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/hp2.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/hp3.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/hp4.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/hp5.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/hp6.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/immortal.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/ravenfire.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/rationality.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/harrycrow.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/nightmares.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/kissed.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/rebuilding.txt", function(text) {
+	     markov.feed(text);
+	});
+	$.get("harrypotter/titles.txt", function(text) {
+	     titleMarkov.feed(text);
+	});
+	function generate(){
+		var title = titleMarkov.generate();
+		title = title.substring(0,title.length-1);
+		var t = markov.generate();
+		$('h1').text(title);
+		$('p').text(t);
+	}
+</script>
+<h1>Harry Potter and the...</h1>
+<p></p>
+<button onclick="generate()">Generate</button>

@@ -1,0 +1,36 @@
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/markov.js"></script>
+<script>
+var txt;
+var markov = new MarkovGeneratorWord(2,100,true)
+$.get("election/clinton.txt", function(text) {
+     markov.feed(text);
+});
+$.get("election/trump.txt", function(text) {
+     markov.feed(text);
+});
+$.get("election/clinton1.txt", function(text) {
+     markov.feed(text);
+});
+$.get("election/trump1.txt", function(text) {
+     markov.feed(text);
+});
+$.get("election/clinton2.txt", function(text) {
+     markov.feed(text);
+});
+$.get("election/trump2.txt", function(text) {
+     markov.feed(text);
+});
+$.get("election/clinton3.txt", function(text) {
+     markov.feed(text);
+});
+$.get("election/trump3.txt", function(text) {
+     markov.feed(text);
+});
+function generate(){
+	var t = markov.generate()
+	$('h1').text(t);
+}
+</script>
+<h1>Markov-generated text will go here</h1>
+<button onclick="generate()">Generate</button>

@@ -1,0 +1,18 @@
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/markov.js"></script>
+<script>
+var txt;
+var markov = new MarkovGeneratorWord(3,50)
+$.get("sherlock.txt", function(text) {
+     markov.feed(text);
+});
+$.get("thebigsleep.txt", function(text) {
+     markov.feed(text);
+});
+function generate(){
+	var t = markov.generate()
+	$('h1').text(t);
+}
+</script>
+<h1>Markov-generated text will go here</h1>
+<button onclick="generate()">Generate</button>

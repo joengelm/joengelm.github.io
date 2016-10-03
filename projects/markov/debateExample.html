@@ -1,0 +1,37 @@
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/markov.js"></script>
+<script>
+	var trumpMarkov = new MarkovGeneratorWord(2,50)
+	var clintonMarkov = new MarkovGeneratorWord(2,50)
+	var holtMarkov = new MarkovGeneratorWord(2,25)
+
+	$.get("election/trump.txt", function(text) {
+	     trumpMarkov.feed(text);
+	});
+	$.get("election/clinton.txt", function(text) {
+	     clintonMarkov.feed(text);
+	});
+	$.get("election/holt.txt", function(text) {
+	     holtMarkov.feed(text);
+	});
+
+	function generate(){
+		var holtSays = holtMarkov.generate()
+		$('body').append("<p><b>Holt: </b>" + holtSays + "</p>")
+
+		var trumpSays = trumpMarkov.generate()
+		$('body').append("<p><b>Trump: </b>" + trumpSays + "</p>")
+
+		var clintonSays = clintonMarkov.generate()
+		clintonSays = clintonSays.slice(0, randomNumberBetween(0, clintonSays.length)) + "-"
+		$('body').append("<p><b>Clinton: </b>" + clintonSays + "</p>")
+
+		var trumpSays = trumpMarkov.generate()
+		$('body').append("<p><b>Trump: </b>" + trumpSays + "</p>")
+	}
+
+	function randomNumberBetween(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+</script>
+<button onclick="generate()">Generate</button>

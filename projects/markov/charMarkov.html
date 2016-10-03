@@ -1,0 +1,15 @@
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/markov.js"></script>
+<script>
+var txt;
+var markov = new MarkovGenerator(4,200)
+$.get("windhover.txt", function(text) {
+     markov.feed(text);
+});
+function generate(){
+	var t = markov.generate()
+	$('h1').text(t);
+}
+</script>
+<h1>Markov-generated text will go here</h1>
+<button onclick="generate()">Generate</button>
