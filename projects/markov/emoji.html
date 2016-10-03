@@ -1,12 +1,15 @@
 <script src="../lib/jquery-1.11.1.min.js"></script>
 <script src="../lib/markov.js"></script>
 <script>
-	var markov = new MarkovGenerator(2,200)
+	var markov = new MarkovGenerator(3,200)
 	$.get("emojitexts.txt", function(text) {
 	     markov.feed(text);
 	});
 	function generate(){
-		var t = markov.generate()
+		var t = markov.generate();
+		while (t.length < 5) {
+			t = markov.generate();
+		}
 		$('h1').text(t);
 	}
 </script>
