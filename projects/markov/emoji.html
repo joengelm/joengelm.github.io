@@ -2,7 +2,7 @@
 <script src="../lib/markov.js"></script>
 <script>
 	var markov = new MarkovGenerator(3,200)
-	$.get("emojitexts.txt", function(text) {
+	$.get("cleanmoji.txt", function(text) {
 	     markov.feed(text);
 	});
 	function generate(){
