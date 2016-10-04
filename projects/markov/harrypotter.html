@@ -1,58 +1,81 @@
-<script src="../lib/jquery-1.11.1.min.js"></script>
-<script src="../lib/markov.js"></script>
-<script>
-	var markov = new MarkovGeneratorWord(3,100);
-	var titleMarkov = new MarkovGeneratorWord(2,6);
-	$.get("harrypotter/hp1.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/hp2.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/hp3.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/hp4.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/hp5.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/hp6.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/immortal.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/ravenfire.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/rationality.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/harrycrow.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/nightmares.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/kissed.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/rebuilding.txt", function(text) {
-	     markov.feed(text);
-	});
-	$.get("harrypotter/titles.txt", function(text) {
-	     titleMarkov.feed(text);
-	});
-	function generate(){
-		var title = titleMarkov.generate();
-		title = title.substring(0,title.length-1);
-		var t = markov.generate();
-		$('h1').text(title);
-		$('p').text(t);
-	}
-</script>
-<h1>Harry Potter and the...</h1>
-<p></p>
-<button onclick="generate()">Generate</button>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+		<script src="../lib/jquery-1.11.1.min.js"></script>
+		<script src="../lib/markov.js"></script>
+	</head>
+	<body>
+		<div class='loading' style='margin: auto; border: 1px solid black; text-align: center;'>
+			<p>Loading...</p>
+		</div>
+		<div class='loaded' style="margin: 20px 40px 0 20px; max-width: 600px;">
+			<div class="chapter">
+				<h1 style="font-family: 'Reenie Beanie', cursive; font-size: 48px;">Harry Potter and the...</h1>
+			</div>
+			<button onclick="generate()">Next chapter...</button>
+		</div>
+		<script>
+			$('.loaded').hide();
+			var markov = new MarkovGeneratorWord(3,100);
+			var titleMarkov = new MarkovGeneratorWord(2,6);
+			$.get("harrypotter/hp1.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/hp2.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/hp3.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/hp4.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/hp5.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/hp6.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/immortal.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/ravenfire.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/rationality.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/harrycrow.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/nightmares.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/kissed.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/rebuilding.txt", function(text) {
+			     markov.feed(text);
+			});
+			$.get("harrypotter/titles.txt", function(text) {
+			     titleMarkov.feed(text);
+			     $('.loading').hide();
+			     $('.loaded').show();
+			});
+			function generate() {
+				$('.chapter').empty();
+
+				// append title and content in chapter form
+				var title = titleMarkov.generate();
+				title = title.substring(0,title.length-1);
+				$('.chapter').append('<h1 style=\'font-family: "Reenie Beanie", cursive; font-size: 48px;\'>' + title + '</h1>');
+
+				// append random number of paragraphs
+				for (var i = 0; i < 4; i++) {
+					var t = markov.generate();
+					$('.chapter').append('<p>' + t + '</p>');
+				}
+			}
+		</script>
+	</body>
+</html>
