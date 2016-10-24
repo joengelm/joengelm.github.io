@@ -1,0 +1,19 @@
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<audio src="um.mp3" preload></audio>
+<h1>Click anywhere to play</h1>
+<script type="text/javascript"> 
+  $('body').click(function(){
+    $('h1').text("")
+    $('audio')[0].play()
+  })
+  var txt = "uh i... um uh uh umm uhhh uhh uh uhh juhh uh uhhm well...  um uhhm uh um um and um umm uhh um um and yet... uhh it's uh ahh uh um ah um umm ahh and... oh ah um umm um uh what and uh"
+  $('audio').on('timeupdate',function(){
+    if(this.currentTime > 0 && this.currentTime <= 0.5){
+      $('h1').text("uh")
+    } else if(this.currentTime > 0.5 && this.currentTime <= 1){
+      $('h1').text("i...")
+    } else if(this.currentTime > 1 && this.currentTime <= 1.5){
+      $('h1').text("um")
+    }
+  }); 
+</script>

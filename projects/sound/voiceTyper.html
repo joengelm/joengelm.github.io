@@ -1,0 +1,55 @@
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/responsivevoice.js"></script>
+<style>
+html { 
+  background: url(https://metrouk2.files.wordpress.com/2015/01/fresh-prince.png) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1{
+    text-shadow: lightyellow 1px 1px;
+}
+</style>
+<div id="textDiv"></div>
+<button onclick="begin()">Begin</button>
+<script>
+
+var txt;
+
+$.get("freshprince.txt", function(text) {
+     txt = text;
+});
+function begin(){
+    typeText(txt,57)
+    speak(txt,0.9)
+}
+function typeText(string, speed) {
+    $('#textDiv').append('<h1></h1>');
+    $('#textDiv').append('<span id="bottom"></span>');
+    var dest = $('h1:last')[0]; 
+    var c = 0;
+    var i = setInterval(function () { //basically a while loop with a delay between each iteration
+        if (c >= string.length) {
+            $(dest).html(string);
+            clearInterval(i);
+            // c = 0;
+        } else {
+            if(string[c] == "\n"){
+                $('<span>').html("<br>").appendTo(dest);
+            } else{
+                $('<span>').text(string[c]).appendTo(dest);
+            }
+            c += 1;
+            $('#bottom')[0].scrollIntoView(false);
+        }
+    }, speed); //this is the delay in milliseconds between each character, increase to slow down, decrease to speed up
+};
+
+function speak(string, rate){
+    //rate should be between 0.0 and 2.0
+    responsiveVoice.speak(string, "Australian Female", {rate: rate})
+}
+</script>
