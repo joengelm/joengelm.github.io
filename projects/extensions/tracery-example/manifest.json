@@ -1,0 +1,31 @@
+{
+  "name": "NYT Headline Alterer",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Boilerplate extension for digital language arts II",
+  "homepage_url": "http://tiny.cc/dla2",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.nytimes.com/*"
+      ],
+      "js": [
+        "lib/tracery.js","lib/jquery-1.11.1.min.js","inject.js"
+      ]
+    }
+  ]
+}

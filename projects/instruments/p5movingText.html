@@ -1,0 +1,24 @@
+<script src="../lib/p5.min.js"></script>
+<script>
+var x, y;
+var speedX,speedY;
+function setup() {
+	createCanvas(windowWidth,windowHeight)
+	textSize(36)
+
+}
+function draw(){
+	background(255);
+	if(x){
+		text("where am i going?", x, y)
+		x = x + speedX
+		y = y + speedY
+	}
+}
+function mouseClicked() {
+	x = mouseX;
+	y = mouseY;
+	speedX = random(-10,10);
+	speedY = random(-10,10);
+}
+</script>

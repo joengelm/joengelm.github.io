@@ -1,0 +1,25 @@
+{
+  "name": "Timeless",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Every link leads to an outdated version of its destination",
+  "homepage_url": "http://joengelm.github.io/",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "lib/jquery-1.11.1.min.js", "inject.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<style>
+h1 {
+	text-align: center;
+	font-size: 10em;
+	font-family: Arial Black;
+	margin-top: 10%;
+}
+html { 
+  background: url(sadDolphin.gif) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+</style>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/mousetrap.min.js"></script>
+<script src="../lib/responsivevoice.js"></script>
+<script>
+Mousetrap.bind("q", function(){
+	speakSpell("Hey")
+	changeBG('wink.gif')
+})
+Mousetrap.bind("w", function(){
+	speakSpell("whats")
+	changeBG('sadDolphin.gif')
+})
+Mousetrap.bind("e", function(){
+	speakSpell("up")
+	changeBG('wink.gif')
+})
+function speakSpell(words) {
+	responsiveVoice.speak(words)
+	$('h1').text(words, "UK English Female", 1.5)
+}
+function changeBG(image){
+	$("html").css('background-image', 'url('+image+')'); 
+}
+</script>
+<h1>Press Q, W, E</h1>

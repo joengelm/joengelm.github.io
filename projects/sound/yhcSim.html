@@ -1,0 +1,59 @@
+<script src="../lib/p5.min.js"></script>
+<script src="../lib/p5.sound.js"></script>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script>
+var sound, amplitude;
+var isNotLoud = true;
+var txt = "uh, i..., um, uh a, uh, umm, uhhh, uhh, uh, uhh, juhh, uh, uhhm, well, um, uhhm, uh, um um, and um, umm, uhh, um, uhm, umm, and yet, uhh it's, uh, ahhh, uh, um, ah, um, umm, ahh, and, oh, ah, um, umm, ohmm, what, and uh, um, um, you know, uh, but ah, oh, um, yeah, it's uh, um, um, uhh, umm, umm, um, umm, and uh, um, um"
+var counter = 0;
+var loud = 0.038
+
+function preload(){
+  sound = loadSound('um_short.wav');
+  txt = txt.split(',')
+}
+
+function setup(){
+    amplitude = new p5.Amplitude();
+    sound.play()
+}
+
+function draw(){
+    if(amplitude.getLevel() > loud && isNotLoud){
+        $('h1').text(txt[counter])
+        
+        if (counter < 12) {
+            $('h1').css('color', 'red');
+        } else if (counter >= 12 && counter < 14) {
+            $('h1').css('color', 'green')
+        } else if (counter >= 14) {
+            $('h1').css('color', 'blue')
+        }
+
+        if (counter > 40) {
+            loud = 0.03;
+        }
+
+        isNotLoud = false;
+        counter++;
+    }  
+    if(amplitude.getLevel() <= loud){
+        isNotLoud = true;
+    }
+    //use this to figure out where to set the amplitude 
+    // console.log(amplitude.getLevel())
+}
+
+</script>
+<style>
+h1 {
+    text-align: center;
+    font-size: 10em;
+    font-family: Arial Black;
+    margin-top: 10%;
+}
+html{
+    background-color: white;
+}
+</style>
+<h1></h1>

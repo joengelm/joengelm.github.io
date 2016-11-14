@@ -1,0 +1,25 @@
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/mousetrap.min.js"></script>
+<script>
+Mousetrap.bind("space", function(){
+	placeRandom()
+	$('h1').remove();
+})
+
+function placeRandom(){
+		var x = getRandomInt(0,80)
+		var y = getRandomInt(0,85)
+		x = x.toString() + "%"
+		y = y.toString() + "%"
+		//the code below will remove all of the chosen element, in this case svg, and put in a new one. 
+		$('svg').remove()
+		$('body').append('<svg height="210" width="500" style="position: absolute; left:'+x+'; top:'+y+'"><polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:nonzero;"/></svg>')
+		//you could also just move an existing SVG round with something like
+		//$('svg').css({left: x, top: y})
+}
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+</script>
+<h1>Press Space to see stars</h1>
+

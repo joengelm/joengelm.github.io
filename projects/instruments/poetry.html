@@ -1,0 +1,58 @@
+<style>
+    textarea {
+        border: none;
+        font-size: 24px;
+        height: 100%;
+        outline: none;
+        padding: 50px 100px;
+        resize: none;
+        width: 100%;
+    }
+</style>
+
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/mousetrap.min.js"></script>
+<script src="../lib/responsivevoice.js"></script>
+
+<script>
+    const speakSpell = (words) => {
+        responsiveVoice.speak(words);
+        $('textarea').text(words, "UK English Female", 1.5);
+    }
+
+    $('#textInput').on('keyup', function() {
+        doneTyping();
+    });
+
+    const doneTyping = () => {
+        const query = $('textarea').val();
+        // if there is no query
+        if (query === "") {
+            return;
+        }
+        console.log(query);
+        var postParams = {
+            "text" : query
+        };
+        $.post("https://fgw.herokuapp.com/api/sentiment", postParams, function(responseJSON) {
+            console.log(responseJSON);
+        });
+    };
+
+    Mousetrap.bind("return", function() {
+        const lines = $('textarea').val().split('\n');
+        const lastLine = lines.pop();
+
+        console.log(lastLine);
+        var postParams = {
+            "text" : lastLine
+        };
+        $.post("fgw.herokuapp.com/api/sentiment", postParams, function(responseJSON) {
+            console.log(responseJSON);
+        });
+
+        speakSpell(lastLine);
+    });
+</script>
+
+<textarea class="mousetrap" placeholder="Write something here..."></textarea>
