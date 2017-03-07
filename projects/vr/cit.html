@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Street View</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #pano {
+        float: left;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pano"></div>
+    <script>
+
+      function initialize() {
+        var fenway = {lat: 41.8267708, lng: -71.3997269};
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'), {
+              position: fenway,
+              pov: {
+                heading: 34,
+                pitch: 10
+              },
+              linksControl: false,
+				panControl: false,
+				addressControl: false,
+				enableCloseButton: false,
+				zoomControl: false,
+				fullscreenControl: false,
+				enableCloseButton: false,
+				addressControlOptions: {
+				     position: google.maps.ControlPosition.BOTTOM_CENTER
+				}
+            });
+
+        setTimeout(() => $('*').filter(function() {
+		    return $(this).css('z-index') > 100;
+		}).each(function() {
+		    $(this).remove();
+		}), 500);
+      }
+    </script>
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2lRPYyLTbEyCA0zo7MYkhBWRPqQjjDXg&callback=initialize">
+    </script>
+  </body>
+</html>
