@@ -1,0 +1,29 @@
+.world {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: -webkit-linear-gradient(#e4e0ba, #f7d9aa);
+	background: linear-gradient(#e4e0ba, #f7d9aa);
+}
+
+#start {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	cursor: pointer;
+}
+
+#stop {
+	position: absolute;
+	top: 10px;
+	left: 70px;
+	cursor: pointer;
+}
+
+#rewind {
+	position: absolute;
+	top: 10px;
+	left: 120px;
+	cursor: pointer;
+}
